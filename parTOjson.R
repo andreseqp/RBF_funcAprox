@@ -2,11 +2,11 @@
 
 library("jsonlite")
 
-projDir<-"D:\\quinonesa\\learning_models_c++\\functAprox_actCrit"
+projDir<-"D:\\quinonesa\\learning_models_c++\\RBF_funcAprox"
 
 simsDir<-"S:/quinonesa/Simulations/functionAprox/ActCrit/RBF"
 
-exedir<-paste(projDir,'/./FunctionAproxSarsa.exe',sep='')
+exedir<-paste(projDir,'/./funcAprox_actCrit.exe',sep='')
 
 fileName<-"parameters.json"
 
@@ -20,7 +20,7 @@ param<-list(totRounds=1000000,ResProb=0.2,VisProb=0.2,
             inbr=0,outbr=0,trainingRep=10,
             alphaCrit=0.01,alphaAct=0.01,printGen=500,seed=1, 
             gammaRange=c(0,0.8),
-            tauRange=c(5,10),netaRange=c(FALSE,TRUE),mins=c(10,10),
+            netaRange=c(FALSE,TRUE),mins=c(10,10),
             folder=simsDir)
 
 param$visitors$Sp1$means<-c(66,20,40)
@@ -78,9 +78,9 @@ for (i in 1:4) {
   {
     write(outParam,paste(simsDir,listfolders[i],fileName,sep="\\"))
   }
-  system(paste(exedir,
-    gsub("\\","/",paste(simsDir,listfolders[i],fileName,sep="\\"),fixed=TRUE)
-    ,sep = " "))
+  # system(paste(exedir,
+  #   gsub("\\","/",paste(simsDir,listfolders[i],fileName,sep="\\"),fixed=TRUE)
+  #   ,sep = " "))
 }
 gsub(pattern = "\\",replacement = "/",simsdir,fixed=TRUE)
 
