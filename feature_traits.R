@@ -59,9 +59,11 @@ countR<-1
 countC<-0
 i<-0
 par(xaxt='s',yaxt='s')
-plot.new()
-numSP<-3
+numSP<-4
 nbreaks<-8
+png(paste(plotsdir,listPar[1],numSP,"dist.png",sep=""),
+    width = 1000,height = 1000)
+plot.new()
 
 for(trait in tmp){
   i<-i+1
@@ -73,20 +75,20 @@ for(trait in tmp){
   #             max(FIAraw[get(extpar)==parH,.(get(paste(trait,"_choice",sep="")),
   #                                            get(paste(trait,"_discard",sep="")))]))
   hist(c(0,100),ylim = ylimtemp,xlab="",ylab="",border = "white",main="")
-  for(sp in sort(unique(FIAraw[LenNumSp==numSP,Species_choice]))){
-    hist(c(FIAraw[(Type_choice==0&LenNumSp==numSP)&Species_choice==sp,
+  for(sp in sort(unique(FIAraw[LenRewNumSp==numSP,Species_choice]))){
+    hist(c(FIAraw[(Type_choice==0&LenRewNumSp==numSP)&Species_choice==sp,
                   get(paste(trait,"_choice",sep=""))],
-           FIAraw[(Type_discard==0&LenNumSp==numSP)&Species_discard==sp,
+           FIAraw[(Type_discard==0&LenRewNumSp==numSP)&Species_discard==sp,
                   get(paste(trait,"_discard",sep=""))]),ylim=ylimtemp,main = "",
-         col = colResidents[match(sp,sort(unique(FIAraw[LenNumSp==numSP,
+         col = colResidents[match(sp,sort(unique(FIAraw[LenRewNumSp==numSP,
                                                           Species_choice])))],
          freq = FALSE,xlab="",xlim=xlimtemp,ylab="",
          add=TRUE,breaks = nbreaks)
-    hist(c(FIAraw[(Type_choice==1&LenNumSp==numSP)&Species_choice==sp,
+    hist(c(FIAraw[(Type_choice==1&LenRewNumSp==numSP)&Species_choice==sp,
                   get(paste(trait,"_choice",sep=""))],
-           FIAraw[(Type_discard==1&LenNumSp==numSP)&Species_discard==sp,
+           FIAraw[(Type_discard==1&LenRewNumSp==numSP)&Species_discard==sp,
                   get(paste(trait,"_discard",sep=""))]),main = "",xlab="",ylab="",
-         col = colVisitors[match(sp,sort(unique(FIAraw[LenNumSp==numSP,
+         col = colVisitors[match(sp,sort(unique(FIAraw[LenRewNumSp==numSP,
                                                           Species_choice])))],
          freq = FALSE,add=TRUE,ylim=ylimtemp,xlim=xlimtemp,breaks = nbreaks)
   }
@@ -101,9 +103,11 @@ for(trait in tmp){
 par(plt=posPlot(numplotx = ncols,numploty = nrows,idplotx = countC+1,
                 idploty = countR),new=TRUE)
 hist(c(0,100),ylim = ylimtemp,xlab="",ylab="",border = "white",main="")
-legend("topright",legend = rep(sort(unique(FIAraw[LenNumSp==numSP,Species_choice])),2),
+legend("topright",legend = rep(sort(unique(FIAraw[LenRewNumSp==numSP,Species_choice])),2),
        col=c(colVisitors[1:numSP],colResidents[1:numSP]),#c("visitor","resident"),col = colours
        pch = 15,ncol = 2,title="Visitors    Residents")
+dev.off()
+
 
 #  Critic feature weights dyanamics--------------------------------------------------
 

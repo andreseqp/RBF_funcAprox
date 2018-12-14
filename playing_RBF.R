@@ -19,16 +19,19 @@ numfeat<-4
 rangSigSq<-250
 rangCent<-seq(0,100,length=numfeat)[1:(numfeat)]
 rangx<-seq(0,100,length=1000)
-featW<-c(0.5,2.5,2,1)
-  seq(0.5,4,length=numfeat)
+featW<- seq(0.5,3.5,length=numfeat)
+c(0.5,2.5,2,1)
+ 
   runif(numfeat,max=1)
-
+png(paste(plotsdir,"cartoon2.png",sep=""),width = 1000,height = 1000)
 par(plt=posPlot())
 plot(totRBF(rangx,rangCent,rangSigSq,featW)~rangx,type='l',col=1,
-     xlab="x",ylab="response",ylim=c(0,10))
+     xlab="x",ylab="response",ylim=c(0,4),lwd=3)
 for(i in 1:numfeat){
-  lines(RBF(rangx,rangCent[i],rangSigSq)~rangx,col=i+1)  
+  lines(RBF(rangx,rangCent[i],rangSigSq)~rangx,col=i+1,lwd=3)  
 }
+
+dev.off()
 
 featLoc<-matrix(data = NA,nrow = 4096,ncol = 6)
 
@@ -75,3 +78,14 @@ hist(rewRes,add=TRUE)
 
 plot(c(rewVis,rewRes)~c(sizeVis,sizeRes))
 
+png(paste(plotsdir,"cartoon3.png",sep=""),width = 1000,height = 700)
+par(plt=posPlot(numplotx = 3,idplotx = 1))
+plot(x=c(0,100),y=c(0,4),col=0,xlab="x",ylab="response")
+abline(a=0,b=0.04,lwd=3)
+par(plt=posPlot(numplotx = 3,idplotx =  2),new=TRUE)
+plot(x=c(0,100),y=c(0,4),col=0,xlab="x",ylab="",yaxt="n")
+abline(a=4,b=-0.04,lwd=3)
+par(plt=posPlot(numplotx = 3,idplotx =  3),new=TRUE)
+plot(x=c(0,100),y=c(0,4),col=0,xlab="x",ylab="",yaxt="n")
+abline(a=2,b=-0.02,lwd=3)
+dev.off()
