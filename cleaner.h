@@ -1,10 +1,10 @@
-#pragma once
+#pragma once		
 #ifndef CLEANER_H
 #define CLEANER_H
 #include "Client.h"
 
 #include <fstream>
-#include "D:\\quinonesa\\Dropbox\C++\\json.hpp"  
+#include "../Cpp/json.hpp"        
 
 
 enum learPar { alphaCritPar, alphaActPar, gammaPar, netaPar };

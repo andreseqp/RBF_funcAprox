@@ -5,12 +5,10 @@
 # source('E:/Dropbox/R_files/vioplot.R')
 
 # Office
-source('C:/Users/quinonesa/Dropbox/R_files/posPlots.R')
-source('C:/Users/quinonesa/Dropbox/R_files/vioplot.R')
+library(here);here()
+source('../R_files/posPlots.R')
+source('../R_files/vioplot.R')
 
-# Home
-source("H:\\Dropbox\\R_files\\posPlots.R")
-source("H:\\Dropbox\\R_files\\vioplot.R")
 
 # Define Colours -------------------------------------------------------
 

@@ -4,7 +4,7 @@ library("jsonlite")
 
 projDir<-"D:\\quinonesa\\learning_models_c++\\RBF_funcAprox"
 
-simsDir<-"S:/quinonesa/Simulations/functionAprox/ActCrit/RBF"
+simsDir<-"Simulations"
 
 exedir<-paste(projDir,'/./funcAprox_actCrit.exe',sep='')
 

@@ -1,0 +1,49 @@
+{
+  "totRounds": 1000000,
+  "ResProb": 0.2,
+  "VisProb": 0.2,
+  "ResProbLeav": 0,
+  "VisProbLeav": 1,
+  "negativeRew": -0.5,
+  "experiment": false,
+  "inbr": 0,
+  "outbr": 0,
+  "trainingRep": 10,
+  "alphaCrit": 0.01,
+  "alphaAct": 0.01,
+  "printGen": 500,
+  "seed": 1,
+  "gammaRange": [0, 0.8],
+  "tauRange": [5, 10],
+  "netaRange": [false, true],
+  "mins": [10, 10],
+  "folder": "S:/quinonesa/Simulations/functionAprox/ActCrit/RBF/LenRewNumSp2_/",
+  "visitors": {
+    "Sp1": {
+      "means": [66, 94, 94],
+      "sds": [10, 1, 1],
+      "relAbun": 1,
+      "reward": [1, 0.1]
+    },
+    "Sp2": {
+      "means": [66, 46, 54],
+      "sds": [10, 1, 1],
+      "relAbun": 1,
+      "reward": [1, 0.1]
+    }
+  },
+  "residents": {
+    "Sp1": {
+      "means": [33, 12, 83],
+      "sds": [10, 1, 1],
+      "relAbun": 1,
+      "reward": [1, 0.1]
+    },
+    "Sp2": {
+      "means": [33, 55, 23],
+      "sds": [10, 1, 1],
+      "relAbun": 1,
+      "reward": [1, 0.1]
+    }
+  }
+}

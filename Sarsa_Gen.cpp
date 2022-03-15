@@ -44,14 +44,12 @@ Last edit date:
 #include <fstream>
 #include <vector>
 // Random number generator
-#include "M:\\Routines\\C++\\RandomNumbers\\random.h" 
-//H for house pc, E for laptop, M for Office
-#include "M:\\Routines\\C++\\RandomNumbers\\stdafx.h"
+#include "../Cpp/Routines/C++/RandomNumbers/random.h" 
 // Classes
 #include "cleaner.h"
 #include "Client.h"
 // Jason parser
-#include "D:\\quinonesa\\Dropbox\C++\\json.hpp"       
+#include "../Cpp/json.hpp"        
 // Header for reading and using JSON files see https://github.com/nlohmann/json
 
 #define GET_VARIABLE_NAME(Variable) (#Variable)
@@ -189,7 +187,7 @@ void initializeIndFile(ofstream &indOutput, agent &learner,
 	indOutput << endl;*/
 }
 
-int _tmain(int argc, _TCHAR* argv[]) {
+int _tmain(int argc, char* argv[]) {
 
 	ifstream input(argv[1]);
 	if (input.fail()) { cout << "JSON file failed" << endl; }

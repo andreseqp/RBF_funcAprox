@@ -1,0 +1,77 @@
+{
+  "totRounds": 1000000,
+  "ResReward": 1,
+  "VisReward": 1,
+  "ResProb": 0.2,
+  "VisProb": 0.2,
+  "ResProbLeav": 0,
+  "VisProbLeav": 1,
+  "negativeRew": -0.5,
+  "experiment": false,
+  "inbr": 0,
+  "outbr": 0,
+  "trainingRep": 10,
+  "alphaCrit": 0.01,
+  "alphaAct": 0.01,
+  "printGen": 500,
+  "seed": 1,
+  "gammaRange": [0, 0.8],
+  "tauRange": [5, 10],
+  "netaRange": [false, true],
+  "mins": [10, 10],
+  "folder": "S:/quinonesa/Simulations/functionAprox/ActCrit/RBF/NumSp1_/",
+  "visitors": {
+    "Sp1": {
+      "means": [98, 82, 28],
+      "sds": [1, 1, 1],
+      "relAbun": 1
+    },
+    "Sp2": {
+      "means": [38, 46, 21],
+      "sds": [1, 1, 1],
+      "relAbun": 1
+    },
+    "Sp3": {
+      "means": [4, 18, 18],
+      "sds": [1, 1, 1],
+      "relAbun": 1
+    },
+    "Sp4": {
+      "means": [40, 57, 35],
+      "sds": [1, 1, 1],
+      "relAbun": 1
+    },
+    "Sp5": {
+      "means": [19, 85, 97],
+      "sds": [1, 1, 1],
+      "relAbun": 1
+    }
+  },
+  "residents": {
+    "Sp1": {
+      "means": [59, 89, 45],
+      "sds": [1, 1, 1],
+      "relAbun": 1
+    },
+    "Sp2": {
+      "means": [6, 27, 31],
+      "sds": [1, 1, 1],
+      "relAbun": 1
+    },
+    "Sp3": {
+      "means": [75, 28, 86],
+      "sds": [1, 1, 1],
+      "relAbun": 1
+    },
+    "Sp4": {
+      "means": [67, 2, 40],
+      "sds": [1, 1, 1],
+      "relAbun": 1
+    },
+    "Sp5": {
+      "means": [32, 73, 34],
+      "sds": [1, 1, 1],
+      "relAbun": 1
+    }
+  }
+}

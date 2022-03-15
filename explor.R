@@ -1,16 +1,17 @@
 # ------------------ Exploration ------------------------ #
 
 # Directories --------------------------------------------------------------
-genDir<-"S:/quinonesa/Simulations/functionAprox/ActCrit/RBF"
+genDir<-""
 scriptDir<-"d:/quinonesa/learning_models_c++/RBF_funcAprox/"
 plotsdir<-"D:/quinonesa/Dropbox/Neuchatel/Results/functAprox/RBF/"
 
 
 # libraries ----------------------------------------------------------------
-source('d:/quinonesa/Dropbox/R_files/posPlots.R')
-source(paste(scriptDir,"aesth_par.R",sep=""))
-source(paste(scriptDir,"loadData.R",sep = ""))
-source('D:/quinonesa/Dropbox/R_files/ternaryAEQP.R')
+library(here)
+source('../R_files/posPlots.R')
+source("aesth_par.R")
+source("loadData.R")
+source('../R_files/ternaryAEQP.R')
 library('plotrix')
 
 
@@ -18,7 +19,7 @@ library('plotrix')
 
 # Load data ------------------------------------------------------------
 
-setwd(genDir)
+# setwd(genDir)
 
 (listPar<-c("TestRBF","alphC"))
 (listVal<-c("",0.01))
@@ -26,8 +27,9 @@ setwd(genDir)
 (listPar<-rep("LenRewNumSp",4))
 (listVal<-c(1,2,3,4))
 
-FIAraw<-rbindlist(lapply(getFilelist(genDir,listPar,listVal)$FIA,
-                         loadRawData,folder=genDir))
+FIAraw<-rbindlist(lapply(getFilelist(here("Simulations",genDir),
+                                     listPar,listVal)$FIA,
+                         loadRawData,folder=here("Simulations",genDir)))
 
 FIAraw[,idcombSps:=ifelse(test = Type_choice,
                           10*as.numeric(gsub("Sp",Species_choice,
@@ -39,7 +41,7 @@ FIAraw[,idcombSps:=ifelse(test = Type_choice,
 
 FIAraw[,sizeDiff:=Height_choice-Height_discard]
                   
-param<-getParam(genDir,listparam = listPar,values = listVal)
+param<-getParam(here("Simulations",genDir),listparam = listPar,values = listVal)
 
 
 
@@ -66,7 +68,7 @@ FIAtimeIntValue<-rbindlist(lapply(getFilelist(genDir,listPar,listVal)$FIA,
 
 idRep<-0
 GammaP<-0.8
-NetaP<-1
+NetaP<-0
 label<-"punish&future"
 
   
